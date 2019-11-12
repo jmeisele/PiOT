@@ -1,11 +1,12 @@
 # PiOT
 Self Contained Portable IIoT Stack on Raspberry Pi
 
-# Services Include
-- Eclipse Mosquitto
-- InfluxDB
-- NodeRed
-- Grafana
+# Available Services Include
+- Portainer (Docker container management system)
+- Eclipse Mosquitto (MQTT Broker)
+- InfluxDB (Time series database)
+- NodeRed (Browser based for wiring flows together)
+- Grafana (Real Time data vizualization)
 
 ----------------------
 # From the command line
