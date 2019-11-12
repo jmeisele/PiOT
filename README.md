@@ -25,6 +25,7 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 *If influxDB service started, note there is no GUI*
 - docker exec -it influxdb /bin/bash
 - influx (This start's the influxdb shell)
+
 *Some useful influx shell commands*
     - show databases
     - create database <NAME_OF_DATABASE>
