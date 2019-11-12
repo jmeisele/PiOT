@@ -20,6 +20,7 @@ Self Contained Portable IIoT Stack on Raspberry Pi
     - PostGres (Port 5432)
     - Grafana (Port 3000)
 - docker-compose up -d
+
 *If influxDB service started, note there is no GUI*
     - docker exec -it influxdb /bin/bash
     - influx (This start's the influxdb shell)
