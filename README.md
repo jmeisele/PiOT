@@ -2,7 +2,7 @@
 Self Contained Portable IIoT Stack on Raspberry Pi
 
 # Services Include
-- Eclipse
+- Eclipse Mosquitto
 - InfluxDB
 - NodeRed
 - Grafana
