@@ -8,7 +8,7 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 - Grafana
 
 ----------------------
-# From te command line
+# From the command line
 - git clone https://github.com/jmeisele/PiOT.git
 - cd PiOT
 - ./menu.sh
@@ -22,8 +22,8 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 - docker-compose up -d
 
 *If influxDB service started, note there is no GUI*
-    - docker exec -it influxdb /bin/bash
-    - influx (This start's the influxdb shell)
-    - show databases
-    - create database <NAME_OF_DATABASE>
+- docker exec -it influxdb /bin/bash
+- influx (This start's the influxdb shell)
+- show databases
+- create database <NAME_OF_DATABASE>
 
