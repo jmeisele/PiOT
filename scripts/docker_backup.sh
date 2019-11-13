@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd ~/IOTstack
+pushd ~/PiOT
 
 [ -d ./backups ] || mkdir ./backups
 
