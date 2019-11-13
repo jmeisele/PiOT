@@ -8,7 +8,6 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 - NodeRed (Browser based for wiring flows together)
 - Grafana (Real Time data vizualization)
 
-----------------------
 # From the command line
 - git clone https://github.com/jmeisele/PiOT.git
 - cd PiOT
