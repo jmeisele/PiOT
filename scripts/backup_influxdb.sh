@@ -5,7 +5,7 @@ echo "Moving old influxdb backups if they exist"
 [ -d ~/PiOT/backups/influxdb/db_old ] || sudo mkdir ~/PiOT/backups/influxdb/db_old
 sudo rm ~/PiOT/backups/influxdb/db_old/* >/dev/null 2>&1
 sudo mv ~/PiOT/backups/influxdb/db/* ~/PiOT/backups/influxdb/db_old/ >/dev/null 2>&1
-#sudo rm ~/IOTstack/backups/influxdb/db/*
+#sudo rm ~/PioT/backups/influxdb/db/*
 
 #execute the backup command
 echo "backing up influxdb database"
