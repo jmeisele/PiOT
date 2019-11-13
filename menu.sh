@@ -70,10 +70,7 @@ mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 	"" 20 78 12 -- \
 	"install" "Install Docker" \
 	"build" "Build Stack" \
-	"hassio" "Install Hass.io (Requires Docker)" \
 	"commands" "Docker commands" \
-	"backup" "Backup options" \
-	"misc" "Miscellaneous commands" \
 	3>&1 1>&2 2>&3)
 
 case $mainmenu_selection in
@@ -158,94 +155,7 @@ case $mainmenu_selection in
 	"prune_images") ./scripts/prune-images.sh ;;
 	esac
 	;;
-	#Backup menu ---------------------------------------------------------------------
-"backup")
-	backup_sellection=$(whiptail --title "Backup Options" --menu --notags \
-		"Select backup option" 20 78 12 -- \
-		"dropbox-uploader" "Dropbox-Uploader" \
-		"rclone" "google drive via rclone" \
-		3>&1 1>&2 2>&3)
 
-	case $backup_sellection in
-
-	"dropbox-uploader")
-		if [ ! -d ~/Dropbox-Uploader ]; then
-			git clone https://github.com/andreafabrizi/Dropbox-Uploader.git ~/Dropbox-Uploader
-			chmod +x ~/Dropbox-Uploader/dropbox_uploader.sh
-			pushd ~/Dropbox-Uploader && ./dropbox_uploader.sh
-			popd
-		else
-			echo "Dropbox uploader already installed"
-		fi
-
-		#add enable file for Dropbox-Uploader
-		[ -d ~/IOTstack/backups ] || sudo mkdir -p ~/IOTstack/backups/
-		sudo touch ~/IOTstack/backups/dropbox
-		;;
-	"rclone")
-		sudo apt install -y rclone
-		echo "Please run 'rclone config' to configure the rclone google drive backup"
-		#add enable file for rclone
-		[ -d ~/IOTstack/backups ] || sudo mkdir -p ~/IOTstack/backups/
-		sudo touch ~/IOTstack/backups/rclone
-		;;
-	esac
-	;;
-	#MAINMENU Misc commands------------------------------------------------------------
-"misc")
-	misc_sellection=$(whiptail --title "Miscellaneous Commands" --menu --notags \
-		"Some helpful commands" 20 78 12 -- \
-		"swap" "Disable swap" \
-		"log2ram" "install log2ram to decrease load on sd card, moves /var/log into ram" \
-		3>&1 1>&2 2>&3)
-
-	case $misc_sellection in
-	"swap")
-		sudo dphys-swapfile swapoff
-		sudo dphys-swapfile uninstall
-		sudo update-rc.d dphys-swapfile remove
-		echo "Swap file has been removed"
-		;;
-	"log2ram")
-		if [ ! -d ~/log2ram ]; then
-			git clone https://github.com/azlux/log2ram.git ~/log2ram
-			chmod +x ~/log2ram/install.sh
-			pushd ~/log2ram && sudo ./install.sh
-			popd
-		else
-			echo "log2ram already installed"
-		fi
-		;;
-	esac
-	;;
-
-"hassio")
-	echo "install requirements for hass.io"
-	sudo apt install -y bash jq curl avahi-daemon dbus
-	hassio_machine=$(whiptail --title "Machine type" --menu \
-		"Please select you device type" 20 78 12 -- \
-		"raspberrypi4" " " \
-		"raspberrypi3" " " \
-		"raspberrypi2" " " \
-		"raspberrypi4-64" " " \
-		"raspberrypi3-64" " " \
-		"qemux86" " " \
-		"qemux86-64" " " \
-		"qemuarm" " " \
-		"qemuarm-64" " " \
-		"orangepi-prime" " " \
-		"odroid-xu" " " \
-		"odroid-c2" " " \
-		"intel-nuc" " " \
-		"tinker" " " \
-		3>&1 1>&2 2>&3)
-	if [ -n "$hassio_machine" ]; then
-		curl -sL https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh | sudo bash -s -- -m $hassio_machine
-	else
-		echo "no selection"
-		exit
-	fi
-	;;
 *) ;;
 
 esac
