@@ -41,16 +41,16 @@ du -h ./backups/$backupfile
 #upload to cloud
 if [ -f ./backups/dropbox ]; then
 	echo "uploading to dropbox"
-	~/Dropbox-Uploader/dropbox_uploader.sh upload ./backups/$backupfile /IOTstackBU/
+	~/Dropbox-Uploader/dropbox_uploader.sh upload ./backups/$backupfile /PioTBU/
 fi
 
 if [ -f ./backups/rclone ]; then
 	echo "uploading to Google Drive"
-	rclone -P copy ./backups/$backupfile gdrive:/IOTstackBU/
+	rclone -P copy ./backups/$backupfile gdrive:/PioTBU/
 fi
 
 #remove older backup files
 ls -t1 ./backups/backup* | tail -n +6 | xargs rm -f
-echo "last five backup files are saved in ~/IOTstack/backups"
+echo "last five backup files are saved in ~/PioT/backups"
 
 popd
