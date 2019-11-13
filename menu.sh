@@ -70,7 +70,7 @@ mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 	"" 20 78 12 -- \
 	"install" "Install Docker" \
 	"build" "Build Stack" \
-	# "hassio" "Install Hass.io (Requires Docker)" \
+	"hassio" "Install Hass.io (Requires Docker)" \
 	"commands" "Docker commands" \
 	"backup" "Backup options" \
 	"misc" "Miscellaneous commands" \
@@ -111,12 +111,6 @@ case $mainmenu_selection in
 		"grafana" "Grafana" "ON" \
 		"mosquitto" "Eclipse-Mosquitto" "ON" \
 		"postgres" "Postgres" "OFF" \
-		# "adminer" "Adminer" "OFF" \
-		# "openhab" "openHAB" "OFF" \
-		# "zigbee2mqtt" "zigbee2mqtt" "OFF" \
-		# "pihole" "Pi-Hole" "OFF" \
-		# "plex" "Plex media server" "OFF" \
-		# "tasmoadmin" "TasmoAdmin" "OFF" \
 		3>&1 1>&2 2>&3)
 
 	mapfile -t containers <<<"$container_selection"
