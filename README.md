@@ -7,6 +7,7 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 - InfluxDB (Time series database)
 - NodeRed (Browser based for wiring flows together)
 - Grafana (Real Time data vizualization)
+- Chronograf (Web UI Influxdb Explorer)
 
 # From the command line
 - git clone https://github.com/jmeisele/PiOT.git
@@ -19,6 +20,7 @@ Self Contained Portable IIoT Stack on Raspberry Pi
     - InfluxDB (Port 8086)
     - PostGres (Port 5432)
     - Grafana (Port 3000)
+    - Chronograf (Port 8888)
 - docker-compose up -d
 
 *If influxDB service started, note there is no GUI*
