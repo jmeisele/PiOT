@@ -108,6 +108,7 @@ case $mainmenu_selection in
 		"grafana" "Grafana" "ON" \
 		"mosquitto" "Eclipse-Mosquitto" "ON" \
 		"postgres" "Postgres" "OFF" \
+		"chronograf" "Chronograf" "OFF" \
 		3>&1 1>&2 2>&3)
 
 	mapfile -t containers <<<"$container_selection"

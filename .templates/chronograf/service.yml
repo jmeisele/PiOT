@@ -1,0 +1,12 @@
+  chronograf:
+    container_name: chronograf
+    image: chronograf/chronograf:6.3.6
+    restart: unless-stopped
+    user: "0"
+    ports:
+      - 8888:8888
+    env_file:
+      - ./services/chronograf/chronograf.env
+    volumes:
+      - ./volumes/chronograf/data:/var/lib/chronograf
+      - ./volumes/chronograf/log:/var/log/chronograf
