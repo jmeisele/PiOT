@@ -3,9 +3,10 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 
 # Available Services Include
 - Portainer (Docker container management system)
+- NodeRed (Browser based for wiring flows together)
 - Eclipse Mosquitto (MQTT Broker)
 - InfluxDB (Time series database)
-- NodeRed (Browser based for wiring flows together)
+- PostGres (Relational Datatbase Management System)
 - Grafana (Real Time data vizualization)
 - Chronograf (Web UI Influxdb Explorer)
 
