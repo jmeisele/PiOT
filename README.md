@@ -7,7 +7,7 @@ Self Contained Portable IIoT Stack on Raspberry Pi
 - Eclipse Mosquitto (MQTT Broker)
 - InfluxDB (Time series database)
 - PostGres (Relational Datatbase Management System)
-- Grafana (Real Time data vizualization)
+- Grafana (Real Time data visualization)
 - Chronograf (Web UI Influxdb Explorer)
 
 # From the command line
