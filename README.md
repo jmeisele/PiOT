@@ -1,5 +1,5 @@
 # PiOT
-Self Contained Portable IIoT Stack on Raspberry Pi
+Self contained portable IIoT stack on Raspberry Pi, get it?
 
 # Available Services Include
 - Portainer (Docker container management system)
